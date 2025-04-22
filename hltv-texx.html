@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HLTV Profile - Texx</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: black;
+      font-family: sans-serif;
+    }
+
+    #cookie-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #cookie-overlay h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #cookie-overlay p {
+      font-size: 16px;
+      margin: 0 20px 20px 20px;
+      text-align: center;
+    }
+
+    #agree-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cookie Consent Overlay -->
+  <div id="cookie-overlay">
+    <h1>We value your privacy</h1>
+    <p>This website uses cookies to ensure you get the best experience on our website.</p>
+    <button id="agree-btn">Agree</button>
+  </div>
+
+  <!-- Jumpscare Image -->
+  <img id="screamer" src="https://c.tenor.com/ccu3Klw0yowAAAAd/tenor.gif" alt="Jeff">
+
+  <!-- Scream Audio -->
+  <audio id="scream" src="https://us-tuna-sounds-files.voicemod.net/e53c1fdf-1b2f-4358-b3d0-334cd4ac6344-1680807026293.mp3" loop></audio>
+
+  <script>
+    const agreeBtn = document.getElementById('agree-btn');
+    const screamer = document.getElementById('screamer');
+    const scream = document.getElementById('scream');
+    const overlay = document.getElementById('cookie-overlay');
+
+    agreeBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      screamer.style.display = 'block';
+      scream.play();
+    });
+  </script>
+</body>
+</html>
